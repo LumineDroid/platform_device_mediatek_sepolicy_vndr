@@ -1,0 +1,60 @@
+# NFC
+vendor.nxp.nxpnfc_aidl.INxpNfc/default u:object_r:hal_nfc_service:s0
+
+android.hardware.neuralnetworks.IDevice/mtk-gpu_shim    u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/mtk-dsp_shim    u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/mtk-mdla_shim   u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/mtk-neuron_shim u:object_r:hal_neuralnetworks_service:s0
+
+#mmlpq aidl
+vendor.mediatek.hardware.mmlpq.IMmlpq/default u:object_r:mtk_hal_mmlpq_service:s0
+
+#PQ AIDL
+vendor.mediatek.hardware.pq_aidl.IPictureQuality_AIDL/default u:object_r:mtk_hal_pq_service:s0
+
+#MTKPOWER AIDL
+vendor.mediatek.hardware.mtkpower.IMtkPowerService/default u:object_r:hal_power_service:s0
+
+#Data: 2022/6/7
+#MTKPOWER APPLIST AIDL
+vendor.mediatek.hardware.mtkpower_applist.IMtkpower_applist/default u:object_r:mtk_hal_applist_service:s0
+
+#widevine aidl
+android.hardware.drm.IDrmFactory/widevine    u:object_r:hal_drm_service:s0
+
+#apuware aidl
+vendor.mediatek.hardware.apuware.apusys.INeuronApusys/default u:object_r:hal_neuralnetworks_service:s0
+vendor.mediatek.hardware.apuware.utils.IApuwareUtils/default u:object_r:hal_neuralnetworks_service:s0
+
+#camera aidl
+vendor.mediatek.hardware.camera.aovservice.IAovService/default u:object_r:hal_camera_service:s0
+vendor.mediatek.hardware.camera.atms.IATMs/default u:object_r:hal_camera_service:s0
+vendor.mediatek.hardware.camera.bgservice.IBGService/default u:object_r:hal_camera_service:s0
+vendor.mediatek.hardware.camera.isphal.IISPModule/internal/1 u:object_r:hal_camera_service:s0
+
+# MMAgent
+vendor.mediatek.hardware.mmagent.IMMAgent/default u:object_r:mtk_hal_mmagent_service:s0
+
+# GNSS
+vendor.mediatek.hardware.gnss.IMtkGnss/default u:object_r:hal_gnss_service:s0
+
+# Composer Extension
+vendor.mediatek.hardware.composer_ext.IComposerExt/default u:object_r:mtk_hal_composer_ext_service:s0
+
+# Video Telephony AIDL
+vendor.mediatek.hardware.videotelephony.IVideoTelephony/default u:object_r:mtk_hal_videotelephony_service:s0
+
+# Netdagents AIDL
+vendor.mediatek.hardware.netdagent.INetdagents/default   u:object_r:mtk_hal_netdagent_service:s0
+
+# Nvram
+vendor.mediatek.hardware.nvram.INvram/default u:object_r:mtk_hal_nvramagent_service:s0
+
+# Arm Mali
+arm.mali.platform.ICompression/default u:object_r:mtk_hal_mali_platform_default_service:s0
+
+# Engineering Mode
+vendor.mediatek.hardware.engineermode.IEmds/default   u:object_r:mtk_hal_em_service:s0
+
+# Audio
+vendor.mediatek.hardware.audio.IMtkAudio/default u:object_r:mtk_hal_audio_service:s0
