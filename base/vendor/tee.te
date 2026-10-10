@@ -51,6 +51,18 @@ allow tee protect_f_data_file:dir search;
 allow tee tkcore_protect_data_file:dir create_dir_perms;
 allow tee tkcore_protect_data_file:file { create_file_perms link };
 
+# UFS
+allow tee ufs_bsg_device:chr_file rw_file_perms;
+
+# MiTee
+allow tee proc_mitee_log:file r_file_perms;
+allow tee mitee_client_device:chr_file rw_file_perms;
+allow tee mitee_data_file:dir create_dir_perms;
+allow tee mitee_data_file:file create_file_perms;
+allow tee mitee_sfs_file:dir create_dir_perms;
+allow tee mitee_sfs_file:file create_file_perms;
+set_prop(tee, vendor_mtk_mitee_prop)
+
 #rpmb
 allow tee self:capability sys_rawio;
 allow tee block_device:dir search;
@@ -80,5 +92,14 @@ allow tee proc_tkcore:file rw_file_perms;
 allow tee proc_tkcore:dir search;
 
 allow tee bootdevice_block_device:blk_file rw_file_perms;
-allowxperm tee bootdevice_block_device:blk_file ioctl { MMC_IOC_MULTI_CMD UFS_IOCTL_RPMB};
+allowxperm tee bootdevice_block_device:blk_file ioctl { MMC_IOCTLCMD MMC_IOC_MULTI_CMD UFS_IOCTL_RPMB};
 allow tee tee_data_file:dir create_dir_perms;
+
+# Allow TEE to manage eSE
+allow tee nfc_device:chr_file rw_file_perms;
+
+# Allow TEE to read iSE properties
+get_prop(tee, vendor_mtk_ise_prop)
+
+# tee-supplicant tries to rmdir its non-empty storage directory
+dontaudit tee vendor_data_file:dir { write remove_name };

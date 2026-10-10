@@ -10,6 +10,8 @@ type vpud_native, domain;
 
 init_daemon_domain(vpud_native)
 
+allow vpud_native self:capability sys_nice;
+
 allow vpud_native ion_device:chr_file rw_file_perms;
 allow vpud_native vcu_device:chr_file rw_file_perms;
 allow vpud_native MTK_SMI_device:chr_file r_file_perms;
@@ -18,6 +20,7 @@ allow vpud_native thermalloadalgod:unix_stream_socket connectto;
 allow vpud_native proc_mtktz:dir search;
 allow vpud_native proc_mtktz:file rw_file_perms;
 allow vpud_native proc_thermal:file rw_file_perms;
+set_prop(vpud_native, vendor_thermal_prop)
 set_prop(vpud_native, vendor_mtk_thermal_config_prop)
 allowxperm vpud_native proc_m4u:file ioctl MTK_M4U_GZ_SEC_INIT;
 allowxperm vpud_native proc_m4u:file ioctl MTK_M4U_T_SEC_INIT;

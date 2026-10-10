@@ -126,6 +126,7 @@ set_prop(rild, powerctl_prop)
 # Date: 2019/06/14
 # Operation : Migration
 allow rild proc_cmdline:file r_file_perms;
+allow rild proc_bootconfig:file r_file_perms;
 
 # Date: 2019/07/18
 # Operation: AP wifi path
@@ -249,3 +250,13 @@ set_prop(rild, vendor_mtk_vonr_force_prop)
 
 # CNOP VOWIFI support
 get_prop(rild, vendor_mtk_cnop_vowifi_prop)
+
+# Purpose: Allow rild to write NVRAM
+allow rild nvram_device:blk_file rw_file_perms;
+allow rild nvram_device:chr_file rw_file_perms;
+
+# Purpose: Allow rild to get/set wwan vote airplane property
+set_prop(rild, vendor_mtk_ril_vote_prop)
+
+# Purpose: Allow rild to get/set vendor_mtk_dc_call_prop
+set_prop(rild, vendor_mtk_dc_call_prop)

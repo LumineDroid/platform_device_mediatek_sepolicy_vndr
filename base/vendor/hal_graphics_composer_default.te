@@ -34,6 +34,8 @@ set_prop(hal_graphics_composer_default, vendor_mtk_graphics_hwc_pid_prop)
 set_prop(hal_graphics_composer_default, vendor_mtk_graphics_hwc_hdr_prop)
 set_prop(hal_graphics_composer_default, vendor_mtk_graphics_hwc_validate_separate_prop)
 set_prop(hal_graphics_composer_default, vendor_mtk_graphics_hwc_latch_unsignaled_prop)
+set_prop(hal_graphics_composer_default, vendor_mtk_graphics_hwc_video_mode_prop)
+set_prop(hal_graphics_composer_default, vendor_mtk_debug_sf_cpupolicy_prop)
 
 # Date : WK18.03
 # Purpose: Allow to access property dev/mdp_sync
@@ -121,8 +123,18 @@ get_prop(hal_graphics_composer_default, vendor_mtk_svp_on_mtee_support_prop)
 # Purpose: Call NpAgent
 hal_client_domain(hal_graphics_composer_default,hal_neuralnetworks)
 
+# Allow access to rw brightness nodes
+allow hal_graphics_composer_default sysfs_leds:file rw_file_perms;
+allow hal_graphics_composer_default sysfs_leds:dir r_dir_perms;
+
 # Allow access to read /sys/devices/virtual/switch/hdmi/
 r_dir_file(hal_graphics_composer_default, sysfs_switch)
 
 # Allow to use Composer Extension
 hal_server_domain(hal_graphics_composer_default, hal_mtk_composer_ext)
+
+# Allow composer to get HWC backlight support
+get_prop(hal_graphics_composer_default, vendor_mtk_backlight_ro_prop)
+
+# Allow composer to get MML PQ support
+get_prop(hal_graphics_composer_default, vendor_mtk_mml_support_prop)

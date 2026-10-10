@@ -34,6 +34,8 @@ vendor_internal_prop(vendor_mtk_ctl_volte_stack_prop)
 vendor_internal_prop(vendor_mtk_ctl_volte_ua_prop)
 #=============allow volte md status deamon  ==============
 vendor_internal_prop(vendor_mtk_md_status_prop)
+vendor_internal_prop(vendor_trustonic_prop)
+vendor_internal_prop(vendor_dynamic_sensor_prop)
 
 # Properties which can't be written outside vendor
 vendor_restricted_prop(vendor_mtk_aal_ro_prop)
@@ -67,6 +69,7 @@ vendor_restricted_prop(vendor_mtk_graphics_hwc_hdr_prop)
 vendor_restricted_prop(vendor_mtk_graphics_hwc_pid_prop)
 vendor_restricted_prop(vendor_mtk_graphics_hwc_validate_separate_prop)
 vendor_restricted_prop(vendor_mtk_graphics_hwc_latch_unsignaled_prop)
+vendor_restricted_prop(vendor_mtk_graphics_hwc_video_mode_prop)
 vendor_restricted_prop(vendor_mtk_gsm0710muxd_prop)
 vendor_restricted_prop(vendor_mtk_hdmi_prop)
 vendor_restricted_prop(vendor_mtk_imstestmode_prop)
@@ -82,6 +85,7 @@ vendor_restricted_prop(vendor_mtk_nn_option_prop)
 vendor_restricted_prop(vendor_mtk_gbe_prop)
 vendor_restricted_prop(vendor_mtk_nvram_ready_prop)
 vendor_restricted_prop(vendor_mtk_omx_log_prop)
+vendor_restricted_prop(vendor_mtk_omx_x_ray_prop)
 vendor_restricted_prop(vendor_mtk_operator_id_prop)
 vendor_restricted_prop(vendor_mtk_persist_service_atci_prop)
 vendor_restricted_prop(vendor_mtk_pq_prop)
@@ -96,6 +100,7 @@ vendor_restricted_prop(vendor_mtk_ril_mux_report_case_prop)
 vendor_restricted_prop(vendor_mtk_service_nvram_init_prop)
 vendor_restricted_prop(vendor_mtk_service_nvram_restore_prop)
 vendor_restricted_prop(vendor_mtk_service_wifi_nvram_prop)
+vendor_restricted_prop(vendor_mtk_service_connxo_nvram_prop)
 vendor_restricted_prop(vendor_mtk_simswitch_emmode_prop)
 vendor_restricted_prop(vendor_mtk_smsformat_prop)
 vendor_restricted_prop(vendor_mtk_ss_vendor_prop)
@@ -107,6 +112,7 @@ vendor_restricted_prop(vendor_mtk_usb_otg_switch_prop)
 vendor_restricted_prop(vendor_mtk_usb_prop)
 vendor_restricted_prop(vendor_mtk_c2_log_prop)
 vendor_restricted_prop(vendor_mtk_vdec_log_prop)
+vendor_restricted_prop(vendor_mtk_vdecomx_hdr_type_prop)
 vendor_restricted_prop(vendor_mtk_vdectlc_log_prop)
 vendor_restricted_prop(vendor_mtk_venc_h264_showlog_prop)
 vendor_restricted_prop(vendor_mtk_voicerecgnize_prop)
@@ -204,6 +210,7 @@ vendor_restricted_prop(vendor_mtk_st_nfc_ignore_modem_prop)
 vendor_restricted_prop(vendor_mtk_telephony_addon_prop)
 vendor_restricted_prop(vendor_mtk_trustkernel_tee_prop)
 vendor_restricted_prop(vendor_mtk_trustonic_tee_prop)
+vendor_restricted_prop(vendor_mtk_mitee_prop)
 vendor_restricted_prop(vendor_mtk_vendor_vt_prop)
 vendor_restricted_prop(vendor_mtk_vilte_prop)
 vendor_restricted_prop(vendor_mtk_vilte_support_prop)
@@ -243,6 +250,12 @@ vendor_restricted_prop(vendor_mtk_wod_prop)
 vendor_restricted_prop(vendor_mtk_persist_wod_prop)
 #=============allow mtkmal to start volte==============
 vendor_restricted_prop(vendor_mtk_md_volte_prop)
+vendor_restricted_prop(vendor_mtk_lbs_prop)
+vendor_restricted_prop(vendor_mtk_ril_vote_prop)
+vendor_restricted_prop(vendor_mtk_backlight_ro_prop)
+vendor_restricted_prop(vendor_mtk_mml_support_prop)
+vendor_restricted_prop(vendor_mtk_dc_call_prop)
+vendor_restricted_prop(vendor_mtk_ise_prop)
 
 # Properties with no restriction
 vendor_public_prop(vendor_mtk_sec_video_path_support_prop)
@@ -285,6 +298,7 @@ typeattribute vendor_mtk_modem_warning_prop          mtk_core_property_type;
 typeattribute vendor_mtk_net_cdma_mdmstat_prop       mtk_core_property_type;
 typeattribute vendor_mtk_nvram_ready_prop            mtk_core_property_type;
 typeattribute vendor_mtk_omx_log_prop                mtk_core_property_type;
+typeattribute vendor_mtk_omx_x_ray_prop              mtk_core_property_type;
 typeattribute vendor_mtk_operator_id_prop            mtk_core_property_type;
 typeattribute vendor_mtk_persist_service_atci_prop   mtk_core_property_type;
 typeattribute vendor_mtk_pq_prop                     mtk_core_property_type;
@@ -306,6 +320,7 @@ typeattribute vendor_mtk_tel_switch_prop             mtk_core_property_type;
 typeattribute vendor_mtk_testsim_cardtype_prop       mtk_core_property_type;
 typeattribute vendor_mtk_usb_otg_switch_prop         mtk_core_property_type;
 typeattribute vendor_mtk_vdec_log_prop               mtk_core_property_type;
+typeattribute vendor_mtk_vdecomx_hdr_type_prop       mtk_core_property_type;
 typeattribute vendor_mtk_vdectlc_log_prop            mtk_core_property_type;
 typeattribute vendor_mtk_venc_h264_showlog_prop      mtk_core_property_type;
 typeattribute vendor_mtk_voicerecgnize_prop          mtk_core_property_type;
@@ -386,6 +401,7 @@ typeattribute vendor_mtk_radio_seapi_off_prop         mtk_core_property_type;
 typeattribute vendor_mtk_rcs_ua_support_prop          mtk_core_property_type;
 typeattribute vendor_mtk_rsc_prop                     mtk_core_property_type;
 typeattribute vendor_mtk_secure_venc_prop             mtk_core_property_type;
+typeattribute vendor_mtk_service_connxo_nvram_prop    mtk_core_property_type;
 typeattribute vendor_mtk_service_rcs_prop             mtk_core_property_type;
 typeattribute vendor_mtk_soter_teei_prop              mtk_core_property_type;
 typeattribute vendor_mtk_st_nfc_gsma_support_prop     mtk_core_property_type;
@@ -393,6 +409,7 @@ typeattribute vendor_mtk_st_nfc_ignore_modem_prop     mtk_core_property_type;
 typeattribute vendor_mtk_telephony_addon_prop         mtk_core_property_type;
 typeattribute vendor_mtk_trustkernel_tee_prop         mtk_core_property_type;
 typeattribute vendor_mtk_trustonic_tee_prop           mtk_core_property_type;
+typeattribute vendor_mtk_mitee_prop                   mtk_core_property_type;
 typeattribute vendor_mtk_vendor_vt_prop               mtk_core_property_type;
 typeattribute vendor_mtk_vilte_prop                   mtk_core_property_type;
 typeattribute vendor_mtk_vilte_support_prop           mtk_core_property_type;
@@ -426,3 +443,4 @@ typeattribute vendor_mtk_subsidy_lock_support_prop    mtk_core_property_type;
 typeattribute vendor_mtk_md_volte_prop mtk_core_property_type;
 typeattribute vendor_mtk_wod_prop mtk_core_property_type;
 typeattribute vendor_mtk_persist_wod_prop mtk_core_property_type;
+typeattribute vendor_mtk_lbs_prop mtk_core_property_type;

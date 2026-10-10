@@ -8,6 +8,7 @@ set_prop(vendor_init, vendor_mtk_volte_prop)
 set_prop(vendor_init, vendor_mtk_radio_prop)
 set_prop(vendor_init, vendor_mtk_ril_mode_prop)
 set_prop(vendor_init, vendor_mtk_wmt_prop)
+set_prop(vendor_init, vendor_mtk_video_prop)
 set_prop(vendor_init, vendor_mtk_coredump_prop)
 set_prop(vendor_init, vendor_mtk_atm_mdmode_prop)
 allow vendor_init proc_wmtdbg:file w_file_perms;
@@ -192,6 +193,11 @@ allow vendor_init proc_cpufreq:file w_file_perms;
 allow vendor_init proc_usb_plat:dir search;
 allow vendor_init proc_usb_plat:file rw_file_perms;
 
+# MiTEE
+allow vendor_init mitee_client_device:chr_file r_file_perms;
+allow vendor_init mitee_sfs_file:dir create_dir_perms;
+allow vendor_init mitee_sfs_file:file create_file_perms;
+
 set_prop(vendor_init, vendor_mtk_soter_teei_prop)
 set_prop(vendor_init, vendor_mtk_trustkernel_tee_prop)
 set_prop(vendor_init, vendor_mtk_dx_hdcp_support_prop)
@@ -245,6 +251,7 @@ set_prop(vendor_init, system_mtk_heavy_loading_prop)
 set_prop(vendor_init, vendor_mtk_jpeg_opt_prop)
 set_prop(vendor_init, vendor_mtk_trustonic_tee_prop)
 set_prop(vendor_init, vendor_mtk_microtrust_tee_prop)
+set_prop(vendor_init, vendor_mtk_mitee_prop)
 set_prop(vendor_init, vendor_mtk_md_c2k_cap_dep_check_prop)
 set_prop(vendor_init, vendor_mtk_gwsd_capability_prop)
 set_prop(vendor_init, vendor_mtk_fast_charging_support_prop)
@@ -253,3 +260,9 @@ set_prop(vendor_init, vendor_mtk_sec_video_path_support_prop)
 set_prop(vendor_init, vendor_mtk_svp_on_mtee_support_prop)
 set_prop(vendor_init, vendor_mtk_subsidy_lock_support_prop)
 set_prop(vendor_init, vendor_mtk_cnop_vowifi_prop)
+set_prop(vendor_init, vendor_mtk_vendor_vt_prop)
+set_prop(vendor_init, vendor_mtk_lbs_prop)
+set_prop(vendor_init, vendor_mtk_ril_vote_prop)
+set_prop(vendor_init, vendor_mtk_backlight_ro_prop)
+set_prop(vendor_init, vendor_mtk_mml_support_prop)
+set_prop(vendor_init, vendor_mtk_dc_call_prop)

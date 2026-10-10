@@ -14,6 +14,8 @@ type conn_scp_device, dev_type;
 type wmtdetect_device, dev_type;
 type wmtWifi_device, dev_type;
 type stpbt_device, dev_type;
+type connsys_bt_state_device, dev_type;
+type connsys_wifi_device, dev_type;
 type fw_log_bt_device, dev_type;
 type stpant_device, dev_type;
 type fm_device, dev_type, mlstrustedobject;
@@ -144,6 +146,7 @@ type android_device, dev_type;
 type bmtpool_device, dev_type;
 type bootimg_device, dev_type;
 type btif_device, dev_type;
+type gzvm_device, dev_type, mlstrustedobject, vm_manager_device_type;
 type cache_device, dev_type;
 type cpu_dma_latency_device, dev_type;
 type dummy_cam_cal_device, dev_type;
@@ -212,6 +215,7 @@ type ttyACM_device, dev_type;
 type hrm_device, dev_type;
 type lens_device, dev_type;
 type nvdata_device, dev_type;
+type md_sec_device, dev_type;
 type mcf_ota_block_device,dev_type;
 type nvcfg_device, dev_type;
 type expdb_block_device, dev_type;
@@ -256,7 +260,6 @@ type cam_vpu_block_device,dev_type;
 type boot_para_block_device,dev_type;
 type mtk_dfrc_device, dev_type;
 type vbmeta_block_device, dev_type;
-type alarm_device, dev_type;
 type mdp_device, dev_type;
 type mrdump_device, dev_type;
 type kb_block_device,dev_type;
@@ -272,6 +275,10 @@ type mml_pq_device, dev_type;
 type connsys_bt_block_device, dev_type;
 type connsys_wifi_block_device, dev_type;
 type connsys_gnss_block_device, dev_type;
+type pvmfw_block_device, dev_type;
+type rotfw_block_device, dev_type;
+type ise_block_device, dev_type;
+type emiupfw_block_device, dev_type;
 
 ##########################
 # Sensor common Devices Start
@@ -358,6 +365,12 @@ type mobicore_admin_device, dev_type;
 type mobicore_user_device, dev_type, mlstrustedobject;
 type mobicore_tui_device, dev_type;
 
+# MiTEE device type
+type mitee_client_device, dev_type, mlstrustedobject;
+
+# UFS BSG device type
+type ufs_bsg_device, dev_type;
+
 # teeperf device type
 type teeperf_device, dev_type, mlstrustedobject;
 
@@ -383,3 +396,6 @@ type ccci_mdmonitor_device, dev_type;
 # Operator: S migration
 # Purpose: Add permission for vilte
 type ccci_vts_device, dev_type;
+
+# Purpose: Add permission for pkvm TZ
+type pkvm_mtk_tz_device, dev_type;
